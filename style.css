@@ -1,0 +1,198 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.dashboard {
+    width: 100%;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+section {
+    background: #2a2a2a;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+h2 {
+    margin-bottom: 15px;
+    text-align: center;
+    color: #4caf50;
+    font-size: 22px;
+}
+
+/* --- PLACAR --- */
+.timer {
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+    color: #ffeb3b;
+    margin-bottom: 15px;
+}
+
+.match-box {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.team {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.team-name {
+    background: transparent;
+    border: none;
+    border-bottom: 2px dashed #666;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    padding: 5px;
+    width: 150px;
+}
+
+.team-name:focus {
+    outline: none;
+    border-bottom-color: #4caf50;
+}
+
+.score {
+    font-size: 64px;
+    font-weight: bold;
+}
+
+.score-controls button, .timer-controls button, .add-player-btn {
+    background: #4caf50;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    margin: 2px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.score-controls button:hover, .timer-controls button:hover, .add-player-btn:hover {
+    background: #388e3c;
+}
+
+.vs {
+    font-size: 24px;
+    font-weight: bold;
+    color: #888;
+}
+
+.timer-controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* --- CAMPO TÁTICO --- */
+.tactics-section p {
+    text-align: center;
+    font-size: 14px;
+    color: #aaa;
+    margin-bottom: 15px;
+}
+
+.add-player-btn {
+    display: block;
+    margin: 0 auto 15px auto;
+}
+
+.pitch {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    background-color: #2e7d32;
+    border: 4px solid #ffffff;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.center-circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100px;
+    height: 100px;
+    border: 3px solid #ffffff;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.center-circle::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 8px;
+    height: 8px;
+    background: white;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.pitch::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 3px;
+    height: 100%;
+    background: #ffffff;
+}
+
+.penalty-area {
+    position: absolute;
+    top: 20%;
+    width: 60px;
+    height: 60%;
+    border: 3px solid #ffffff;
+}
+
+.area-left { left: 0; border-left: none; }
+.area-right { right: 0; border-right: none; }
+
+/* --- JOGADORES DRAGGABLE --- */
+.player-token {
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    background: #d32f2f;
+    color: white;
+    border: 2px solid white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 12px;
+    cursor: move;
+    user-select: none;
+    top: 45%;
+    left: 45%;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
