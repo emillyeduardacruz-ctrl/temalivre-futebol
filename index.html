@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel do Futebol</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="dashboard">
+        <!-- SEÇÃO 1: PLACAR INTERATIVO -->
+        <section class="scoreboard-section">
+            <h2>Placar do Jogo</h2>
+            <div class="timer" id="gameTimer">00:00</div>
+            
+            <div class="match-box">
+                <div class="team">
+                    <input type="text" value="Time Mandante" class="team-name">
+                    <div class="score" id="scoreA">0</div>
+                    <div class="score-controls">
+                        <button onclick="changeScore('A', 1)">+</button>
+                        <button onclick="changeScore('A', -1)">-</button>
+                    </div>
+                </div>
+
+                <div class="vs">VS</div>
+
+                <div class="team">
+                    <input type="text" value="Time Visitante" class="team-name">
+                    <div class="score" id="scoreB">0</div>
+                    <div class="score-controls">
+                        <button onclick="changeScore('B', 1)">+</button>
+                        <button onclick="changeScore('B', -1)">-</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timer-controls">
+                <button id="startBtn" onclick="toggleTimer()">Iniciar Tempo</button>
+                <button onclick="resetMatch()">Reiniciar Jogo</button>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 2: CAMPO TÁTICO -->
+        <section class="tactics-section">
+            <h2>Prancheta Tática</h2>
+            <p>Clique no botão para adicionar um jogador no campo e arraste-o livremente.</p>
+            <button class="add-player-btn" onclick="addPlayer()">+ Adicionar Jogador</button>
+            
+            <div class="pitch" id="footballPitch">
+                <div class="center-circle"></div>
+                <div class="penalty-area area-left"></div>
+                <div class="penalty-area area-right"></div>
+                <!-- Jogadores móveis surgem aqui -->
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
