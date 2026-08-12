@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Painel do Futebol</title>
+    <title>Painel do Futebol + Jogos</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -52,7 +52,39 @@
                 <div class="center-circle"></div>
                 <div class="penalty-area area-left"></div>
                 <div class="penalty-area area-right"></div>
-                <!-- Jogadores móveis surgem aqui -->
+            </div>
+        </section>
+
+        <!-- NOVA SEÇÃO 3: MINI JOGOS DE FUTEBOL -->
+        <section class="games-section">
+            <h2>Arena de Jogos</h2>
+            
+            <!-- ABAS DE NAVEGAÇÃO DOS JOGOS -->
+            <div class="game-tabs">
+                <button class="tab-btn active" onclick="switchGame('penalties')">Disputa de Pênaltis</button>
+                <button class="tab-btn" onclick="switchGame('quiz')">Quiz de Futebol</button>
+            </div>
+
+            <!-- JOGO 1: PÊNALTIS -->
+            <div id="gamePenalties" class="game-content active">
+                <h3>Disputa de Pênaltis</h3>
+                <p>Escolha um canto para chutar a bola!</p>
+                <div class="goal-area">
+                    <button class="goal-corner" onclick="shootPenalty('esquerda')">Esquerda</button>
+                    <button class="goal-corner" onclick="shootPenalty('centro')">Centro</button>
+                    <button class="goal-corner" onclick="shootPenalty('direita')">Direita</button>
+                </div>
+                <div id="penaltyResult" class="game-result">Placar: Você 0 x 0 Goleiro</div>
+            </div>
+
+            <!-- JOGO 2: QUIZ -->
+            <div id="gameQuiz" class="game-content">
+                <h3>Quiz de Futebol</h3>
+                <div id="quizContainer">
+                    <p id="quizQuestion">Carregando pergunta...</p>
+                    <div id="quizOptions" class="quiz-options"></div>
+                </div>
+                <div id="quizResult" class="game-result">Pontuação: 0</div>
             </div>
         </section>
     </div>
