@@ -35,6 +35,12 @@ h2 {
     font-size: 22px;
 }
 
+h3 {
+    text-align: center;
+    margin-bottom: 15px;
+    color: #ffeb3b;
+}
+
 /* --- PLACAR --- */
 .timer {
     font-size: 36px;
@@ -81,7 +87,7 @@ h2 {
     font-weight: bold;
 }
 
-.score-controls button, .timer-controls button, .add-player-btn {
+.score-controls button, .timer-controls button, .add-player-btn, .tab-btn {
     background: #4caf50;
     color: white;
     border: none;
@@ -93,7 +99,7 @@ h2 {
     transition: background 0.2s;
 }
 
-.score-controls button:hover, .timer-controls button:hover, .add-player-btn:hover {
+.score-controls button:hover, .timer-controls button:hover, .add-player-btn:hover, .tab-btn:hover {
     background: #388e3c;
 }
 
@@ -176,7 +182,6 @@ h2 {
 .area-left { left: 0; border-left: none; }
 .area-right { right: 0; border-right: none; }
 
-/* --- JOGADORES DRAGGABLE --- */
 .player-token {
     position: absolute;
     width: 32px;
@@ -195,4 +200,93 @@ h2 {
     top: 45%;
     left: 45%;
     box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+/* --- ESTILOS DA ARENA DE JOGOS --- */
+.game-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.tab-btn {
+    background: #444;
+}
+
+.tab-btn.active {
+    background: #ffeb3b;
+    color: #1a1a1a;
+}
+
+.game-content {
+    display: none;
+    text-align: center;
+}
+
+.game-content.active {
+    display: block;
+}
+
+.game-result {
+    margin-top: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffeb3b;
+}
+
+/* Visual do Gol no Jogo de Pênalti */
+.goal-area {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 400px;
+    height: 120px;
+    margin: 20px auto;
+    border: 5px solid white;
+    border-bottom: none;
+    background: rgba(255,255,255,0.1);
+    padding: 10px;
+}
+
+.goal-corner {
+    background: #d32f2f;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    align-self: flex-start;
+    width: 30%;
+    transition: transform 0.1s;
+}
+
+.goal-corner:hover {
+    transform: scale(1.05);
+}
+
+/* Opções de resposta do Quiz */
+.quiz-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 400px;
+    margin: 15px auto;
+}
+
+.quiz-btn {
+    background: #444;
+    color: white;
+    border: 1px solid #666;
+    padding: 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    text-align: left;
+    font-size: 15px;
+    transition: background 0.2s;
+}
+
+.quiz-btn:hover {
+    background: #555;
 }
